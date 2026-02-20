@@ -40,17 +40,24 @@ python autoRefund.py
 - Fetches and processes bills (up to pageSize=50).
 - Outputs success/failed/skipped counts.
 - Version: v2.0 (as per script). 
+
+
+## Configuration
 Key hardcoded values (customize in code if needed):
 - `stationIds: [1227]`
 - `billStatus: 14`
 - `pageSize: 50`
 - Date range: Yesterday 00:00:00 to today 23:59:59
 - Refund note: `python-refund-billid-YYYYMMDD`
-| Endpoint | Method | Purpose |
-|----------|--------|---------|
-| `/api/config-service/user/login` | POST | Authentication  |
-| `/api/statistics-service/billDetailStatisticsController/page` | POST | Fetch bills   |
-| `/api/bill-service/bill/{billId}/refund` | POST | Process refund   |
+
+
+## API Endpoints Used
+| Endpoint                                                    | Method | Purpose                      |
+| ----------------------------------------------------------- | ------ | -----------------------------|
+| /api/config-service/user/login                              | POST   | Authentication autoRefund.py​ |
+| /api/statistics-service/billDetailStatisticsController/page | POST   | Fetch bills autoRefund.py​    |
+| /api/bill-service/bill/{billId}/refund                      | POST   | Process refund autoRefund.py​ |
+
 
 ## Logging
 - Logs to `~/evcharging/logs/billrefund.log`.
